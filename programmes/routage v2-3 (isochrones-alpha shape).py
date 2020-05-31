@@ -8,7 +8,7 @@ from skimage.transform import rescale, resize           #Ajustement du format de
 from matplotlib.image import imread                     #Lecture de l'image contenant les obstacles
 from scipy.io import netcdf                             #Lecture du format netcdf pour les courants
 import json                                             #Lecture du format json pour les vents
-import csv                                              #Lecturre du format csv pour les polaires
+import csv                                              #Lecture du format csv pour les polaires
 
 from scipy.spatial import Delaunay                      #Triangulation de Delaunay
 from mpl_toolkits.mplot3d import Axes3D                 #Affichage 3D des points
@@ -404,23 +404,3 @@ for lst in iso:
     plt.scatter(X, Y)
 plt.title("Isochrones (dt=" + str(dt) + ", n_pt=" + str(n_points) + ", min_dist=" + str(min_dist) + ", alpha=" + str(alpha) + ")")
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
