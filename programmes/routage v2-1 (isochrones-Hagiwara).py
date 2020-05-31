@@ -23,29 +23,13 @@ d_long = radians(-2.03)%TWO_PI
 a_lat = radians(16.22)%TWO_PI
 a_long = radians(-61.53)%TWO_PI
 
-m = 4                                                                                       #Facteur d'agrandissement de la grille
+m = 1                                                                                       #Facteur d'agrandissement de la grille
 
 start_time = 1541335500
 dt = 10800
 
 n_segments = 500                                                                          #Nombre de segments découpant les isochrones
 n_points = 30
-
-
-
-# ==================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -99,10 +83,8 @@ def loadObstacles(file):
 
 # Vitesse     ======================================================================
 def speed(lat, long, time, angle):
-    #print(lat, long, min_lat, min_long, angle)
     y = int(nb_lat - 1 - (lat-min_lat)/((max_lat-min_lat)%TWO_PI)*(nb_lat-1))
     x = int((long-min_long)/((max_long-min_long)%TWO_PI)*(nb_long-1))
-    #print(x, y)
 
     if obstacles[y, x]:
         w_index = int((time-wind_time[0])/(wind_time[1]-wind_time[0]))
@@ -115,7 +97,7 @@ def speed(lat, long, time, angle):
 
 # Point suivant     ======================================================================
 def moveForward(lat, long, angle, v):
-    s = dt*v/3600/Rt        #vitesse: miles/h   Rt: miles   -> donne la dist sur une sphere de rayon 1
+    s = dt*v/3600/Rt        #vitesse: milles/h   Rt: milles   -> donne la dist sur une sphere de rayon 1
     lat2 = asin(  sin(lat)*cos(s) + cos(lat)*sin(s)*sin(angle) )%TWO_PI
     long2 = (long + atan2(sin(s)*cos(angle), (cos(lat)*cos(s)-sin(lat)*sin(s)*sin(angle))))%TWO_PI
     return lat2, long2
@@ -138,20 +120,6 @@ def is_between_angles(a, a_min, a_max):
         return a_min < a and a < a_max
     else:
         return a_min < a or a < a_max
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -195,10 +163,8 @@ for i in range(85):
             v = speed(lat, long, i*dt+start_time, radians(angle))
             lat2, long2 = moveForward(lat, long, radians(angle), v)
             if is_between_angles(lat2, min_lat, max_lat) and is_between_angles(long2, min_long, max_long):
-                #print("new point: ", lat2, long2)
                 angleDepart = angleGCR(d_lat, d_long, lat2, long2)
                 segments[int(angleDepart*n_segments/TWO_PI)].append([lat2, long2, k])
-                #print(lat2, long2, angleDepart*n_segments/360)
     new_iso = []
     for s in segments:
         if s!=[]:
@@ -211,18 +177,6 @@ for i in range(85):
                     index = i
             new_iso.append(s[index])
     iso.append(new_iso)
-##    
-##    plt.imshow(obstacles)
-##    X = []
-##    Y = []
-##    new_iso.append(new_iso[0])
-##    for point in new_iso:
-##        y = nb_lat - (point[0]-min_lat)/(max_lat-min_lat)*nb_lat
-##        x = (point[1]-min_long)/(max_long-min_long)*nb_long
-##        X.append(x)
-##        Y.append(y)
-##    plt.plot(X, Y, 'r')
-##    plt.show()
 
 
 print(tm.time()-t0)
@@ -240,36 +194,3 @@ for lst in iso:
     plt.plot(X, Y, 'r')
 plt.title("Isochrones (dt=" + str(dt) + ", n_seg=" + str(n_segments) + ", n_pt=" + str(n_points))
 plt.show()
-
-
-
-dt = 10800
-
-n_segments = 500                                                                          #Nombre de segments découpant les isochrones
-n_points = 50
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
