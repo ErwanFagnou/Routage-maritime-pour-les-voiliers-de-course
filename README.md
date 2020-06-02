@@ -47,7 +47,7 @@ implémenté 3 algorithmes différents :
     fort est la complexité est en O(n), où n est le
     nombre de points, qui permet un calcul très
     rapide.
-    [_Isochrones (Hagiwara)_](/images/isoH.jpg)
+    ![_Isochrones (Hagiwara)_](/images/isoH.jpg)
 
 
 - Inspiré de la marche de Jarvis, algorithme de calcul d'enveloppe convexe, j'ai développé un
@@ -62,7 +62,7 @@ implémenté 3 algorithmes différents :
     principal est qu'une seule erreur peut bloquer
     tout le programme, ce qui peut arriver
     lorsque des angles sont très petits.
-    [_Isochrones (Jarvis)_](/images/isoJ.jpg)
+    ![_Isochrones (Jarvis)_](/images/isoJ.jpg)
 - J'ai ensuite découvert l' _alpha-shape_ d'un nuage de points, qui est un contour défini de
     manière plus rigoureuse. L'avantage est que l'alpha-shape est un ensemble de segments
     unique, et que l'on peut vérifier indépendamment pour chaque segment s'il appartient à
@@ -77,7 +77,7 @@ implémenté 3 algorithmes différents :
     O(n log(n) ), ce qui est optimal étant donné
     que les algorithmes de calcul d'enveloppe
     convexe sont au mieux en O(n log(n) ).
-    [_Isochrones (alpha-shape)_](/images/isoA.jpg)
+    ![_Isochrones (alpha-shape)_](/images/isoA.jpg)
 
 |                                  | **Réalité** | **1er algotithme (grille)** | **Isochrones (Hagiwara)** | **Isochrones (Jarvis)** | **Isochrones (alpha-shape)** |
 |:--------------------------------:|:-----------:|:---------------------------:|:-------------------------:|:-----------------------:|:----------------------------:|
