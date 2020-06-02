@@ -16,10 +16,8 @@ obtenu des cartes contenant la direction et la force du vent pendant l'édition 
 Rhum, une carte du monde permettant de distinguer terre et mer, et des fichiers appelées polaires de
 vitesse, qui donnent la vitesse d'un voilier selon la force et la direction du vent. Mon premier
 modèle ne prenait ainsi que le vent en compte.
-                                          **Données**
 ![_Données_](/images/data.png)
-*Polaires, Vents (force), Courants (force)*
-*Carte de l'atlantique, Vents (angle), Courants (angle)*
+*Données utilisées and la version finale: Polaires, Vents (force), Courants (force), Carte de l'atlantique, Vents (angle), Courants (angle)*
 
 Le premier algorithme que j'ai conçu était plutôt simple : on considère que le bateau évolue
 dans une grille, et on « propage » le bateau de case en case. A chaque itération, on regarde les cases
