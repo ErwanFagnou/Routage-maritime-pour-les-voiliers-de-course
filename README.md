@@ -79,7 +79,7 @@ implémenté 3 algorithmes différents :
     convexe sont au mieux en O(n log(n) ).
     ![_Isochrones (alpha-shape)_](/images/isoA.png)
 
-|                                  | **Réalité** | **1er algotithme (grille)** | **Isochrones (Hagiwara)** | **Isochrones (Jarvis)** | **Isochrones (alpha-shape)** |
+|                                  | **Réalité** | **1er algorithme (grille)** | **Isochrones (Hagiwara)** | **Isochrones (Jarvis)** | **Isochrones (alpha-shape)** |
 |:--------------------------------:|:-----------:|:---------------------------:|:-------------------------:|:-----------------------:|:----------------------------:|
 |  **Temps de trajet du voilier**  |   12j 11h   |           12j 15h           |          10j 12h          |          9j 18h         |             9j 6h            |
 |        **Temps de calcul**       |      /      |            357 s            |            30 s           |          285 s          |             189 s            |
