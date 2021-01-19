@@ -15,11 +15,8 @@ from mpl_toolkits.mplot3d import Axes3D                 #Affichage 3D des points
 import time
 
 
-# Bugs dus surement aux erreurs de calcul (car grande influence de epsilon)
-#   -> diminuer le nbre de points, donc augmenter leur distance / min_dist permet d'eviter les pts trop proches / croiser les doigts
-
-
-
+# Données:
+#
 # Vents: intervalle de 3h pendant 18 jours
 # Courants: environ 24h (varie legerement) pendant 17 jours
 
