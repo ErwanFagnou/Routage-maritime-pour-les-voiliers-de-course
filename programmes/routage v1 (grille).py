@@ -131,6 +131,8 @@ for n in range(1000):
                     w_angle = int(wind_data[wind_index, i, j, 1])
                     w_speed = wind_data[wind_index, i, j, 0]
                     lat =  min_lat + i*(max_lat-min_lat)/nb_lat
+                    
+                    # Tous les cas on été écrits à la main pour accélérer le temps de calcul
 #Sud
                     gap = abs(w_angle-270)
                     v = polar[min(gap, 360-gap),  int(w_speed)]
